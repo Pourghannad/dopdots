@@ -14,6 +14,7 @@ function dopDots(canvasCtx) {
       10
     );
     const moveSpeed = parseInt(canvas.dataset.movespeed, 10);
+    const secondColor = canvas.dataset.secondcolor || "#00f"
     function renderGrid(x, y, offsetX, offsetY) {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       for (let i = 1; i < canvas.height / marginOfElements; i++) {
@@ -34,7 +35,7 @@ function dopDots(canvasCtx) {
             //   var positionY = (i * marginOfElements + padding);
             ctx.beginPath();
             ctx.arc(positionX, positionY, elementSize, 0, 2 * Math.PI);
-            ctx.fillStyle = "#61737f";
+            ctx.fillStyle = secondColor;
             ctx.fill();
             // setTimeout(() => {
             //     ctx.beginPath();
@@ -100,16 +101,10 @@ function dopDots(canvasCtx) {
       throw "Canvas should have width and height";
     }
     if (elementForMouseMove) {
-      elementForMouseMove.addEventListener(
-        "mousemove",
-        ({ offsetX, offsetY }) => {
-            console.log('asdsad', offsetX, offsetY);
-        //   renderGrid(1 + offsetX/(moveSpeed*650) , 1 + offsetY/(moveSpeed*650) , 1 + ((offsetY + offsetX)/2)/1750 , null);
-          renderGrid(100, 10, 20, 20);
-        //   ctx.clearRect(0, 0, canvas.width, canvas.height);
-        }
-      );
-    }
+      elementForMouseMove.addEventListener('mousemove' , (e) => {
+          renderGrid(1,1, e.offsetX , e.offsetY);
+      })
+  }
   }
   document.addEventListener("DOMContentLoaded", () => {
     dopDots(document.querySelector("main canvas").getContext("2d"));

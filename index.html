@@ -6,41 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DopDots - Sample</title>
     <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            background-color: #1b2339;
-            padding: 2em;
-        }
-      main {
-          border: 5px solid #647091;
-          padding: 1em;
+      body,
+      html {
+        margin: 0;
+        padding: 0;
       }
-      main canvas {
-        width: 500px;
-        height: 500px;
+      body {
+        background-color: #1b2339;
+        padding: 2em;
+      }
+      main {
+        padding: 1em;
       }
     </style>
   </head>
   <body>
     <main>
-        <div class="canvas-wrapper">
-            <canvas
-              width="500px"
-              height="500px"
-              data-margin="20"
-              data-type="grid"
-              data-elementsize="5"
-              data-color="#6082dd"
-              data-elementformousemove=".canvas-wrapper"
-              data-animationdelaytime="500"
-              data-movespeed="220"
-            ></canvas>
-        </div>
+      <div class="canvas-wrapper">
+        <canvas
+          width="200px"
+          height="200px"
+          data-margin="10"
+          data-type="grid"
+          data-elementsize="3"
+          data-color="#6082dd"
+          data-elementformousemove=".canvas-wrapper"
+          data-animationdelaytime="500"
+          data-movespeed="220"
+          data-moveradius="25"
+          data-secondColor="#ff0"
+        ></canvas>
+      </div>
       <div>
-          <input class="margin-input" placeholder="margin" type="number" />
+        <input class="margin-input" placeholder="margin" type="number" />
       </div>
     </main>
     <script src="index.js" defer></script>
