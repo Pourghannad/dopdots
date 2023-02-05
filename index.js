@@ -14,6 +14,7 @@ function dopDots(canvasCtx) {
   function mouseMove(e) {
     renderGrid(1, 1, e.offsetX, e.offsetY);
   }
+  elementForMouseMove.removeEventListener("mousemove", mouseMove);
   function renderGrid(x, y, offsetX, offsetY) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     for (let i = 1; i < canvas.height / marginOfElements; i++) {
@@ -85,8 +86,9 @@ function dopDots(canvasCtx) {
   } else {
     throw "Canvas should have width and height";
   }
-  if (elementForMouseMove) {
+  if (elementForMouseMove && !elementForMouseMove.getAttribute('listener')) {
     elementForMouseMove.addEventListener("mousemove", mouseMove);
+    elementForMouseMove.setAttribute('listener', 'true');
   }
 }
 document.addEventListener("DOMContentLoaded", () => {
