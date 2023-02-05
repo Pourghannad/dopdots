@@ -2,7 +2,6 @@ const canvas = document.querySelector("canvas");
 function dopDots(canvasCtx) {
   const canvas = canvasCtx.canvas;
   const ctx = canvasCtx;
-  const elementMoveRadius = parseInt(canvas.dataset.moveradius, 10);
   const secondColor = canvas.dataset.secondcolor || "#00f";
   const elementForMouseMove = document.querySelector(
     canvas.dataset.elementformousemove
@@ -15,6 +14,7 @@ function dopDots(canvasCtx) {
     const padding = marginOfElements / 2;
     const elementSize = parseInt(canvas.dataset.elementsize, 10);
     const elementsColor = canvas.dataset.color;
+    const elementMoveRadius = parseInt(canvas.dataset.moveradius, 10);
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     for (let i = 1; i < canvas.height / marginOfElements; i++) {
       for (let j = 0; j < canvas.width / marginOfElements + padding; j++) {
@@ -101,5 +101,9 @@ document
   });
 document.querySelector(".margin-input").addEventListener("input", (event) => {
   canvas.dataset.margin = event.target.value;
+  dopDots(document.querySelector("main canvas").getContext("2d"));
+});
+document.querySelector(".move-radius").addEventListener("input", (event) => {
+  canvas.dataset.moveradius = event.target.value;
   dopDots(document.querySelector("main canvas").getContext("2d"));
 });
