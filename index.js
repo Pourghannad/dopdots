@@ -85,19 +85,21 @@ function dopDots(canvasCtx) {
   } else {
     throw "Canvas should have width and height";
   }
-  if (elementForMouseMove && !elementForMouseMove.getAttribute('listener')) {
+  if (elementForMouseMove && !elementForMouseMove.getAttribute("listener")) {
     elementForMouseMove.addEventListener("mousemove", mouseMove);
-    elementForMouseMove.setAttribute('listener', 'true');
+    elementForMouseMove.setAttribute("listener", "true");
   }
 }
 document.addEventListener("DOMContentLoaded", () => {
   dopDots(document.querySelector("main canvas").getContext("2d"));
 });
-document.querySelector(".element-size-input").addEventListener("input", (event) => {
-  canvas.dataset.elementsize = event.target.value;
-  dopDots(document.querySelector("main canvas").getContext("2d"));
-});
-document.querySelector('.margin-input').addEventListener('input', (event) => {
+document
+  .querySelector(".element-size-input")
+  .addEventListener("input", (event) => {
+    canvas.dataset.elementsize = event.target.value;
+    dopDots(document.querySelector("main canvas").getContext("2d"));
+  });
+document.querySelector(".margin-input").addEventListener("input", (event) => {
   canvas.dataset.margin = event.target.value;
   dopDots(document.querySelector("main canvas").getContext("2d"));
 });
