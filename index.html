@@ -17,6 +17,11 @@
       }
       main {
         padding: 1em;
+        max-width: 200px;
+      }
+      .inputs {
+        display: flex;
+        flex-direction: column;
       }
     </style>
   </head>
@@ -31,14 +36,13 @@
           data-elementsize="3"
           data-color="#6082dd"
           data-elementformousemove=".canvas-wrapper"
-          data-animationdelaytime="500"
-          data-movespeed="220"
           data-moveradius="25"
           data-secondColor="#ff0"
         ></canvas>
       </div>
-      <div>
-        <input class="margin-input" placeholder="margin" type="number" />
+      <div class="inputs">
+        <input class="margin-input" placeholder="margin" value="10" type="number" />
+        <input class="element-size-input" placeholder="element size" value="3" type="number" />
       </div>
     </main>
     <script src="index.js" defer></script>
