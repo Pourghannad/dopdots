@@ -5,8 +5,8 @@ function dopDots(canvasCtx) {
   const elementForMouseMove = document.querySelector(
     canvas.dataset.elementformousemove
   );
-  function mouseMove(e) {
-    renderGrid(1, 1, e.offsetX, e.offsetY);
+  function mouseMove(event) {
+    renderGrid(1, 1, event.offsetX, event.offsetY);
   }
   function renderGrid(x, y, offsetX, offsetY) {
     const marginOfElements = canvas.dataset.margin;
