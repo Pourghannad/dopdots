@@ -1,7 +1,5 @@
-const canvas = document.querySelector("canvas");
-function dopDots(canvasCtx) {
-  const canvas = canvasCtx.canvas;
-  const ctx = canvasCtx;
+function dopDots(canvas) {
+  const ctx = canvas.getContext("2d");
   const elementForMouseMove = document.querySelector(
     canvas.dataset.elementformousemove
   );
@@ -91,7 +89,8 @@ function dopDots(canvasCtx) {
   }
 }
 document.addEventListener("DOMContentLoaded", () => {
-  dopDots(document.querySelector("main canvas").getContext("2d"));
+  dopDots(document.querySelector(".testOne canvas"));
+  dopDots(document.querySelector(".testTwo canvas"));
 });
 document
   .querySelector(".element-size-input")
