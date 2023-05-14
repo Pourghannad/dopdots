@@ -5,9 +5,9 @@ function dopDots(canvasCtx) {
     canvas.dataset.elementformousemove
   );
   function mouseMove(event) {
-    renderGrid(1, 1, event.offsetX, event.offsetY);
+    renderGrid(event.offsetX, event.offsetY);
   }
-  function renderGrid(x, y, offsetX, offsetY) {
+  function renderGrid(offsetX, offsetY) {
     const marginOfElements = canvas.dataset.margin;
     const padding = marginOfElements / 2;
     const elementSize = parseInt(canvas.dataset.elementsize, 10);
@@ -40,7 +40,7 @@ function dopDots(canvasCtx) {
   }
   if (canvas.width && canvas.height) {
     if (canvas.dataset.type === "grid") {
-      renderGrid(1, 1, 1, 1);
+      renderGrid(1, 1);
     } else if (canvas.dataset.type === "line") {
       const manifest = JSON.parse(canvas.dataset.manifest);
       if (manifest.lineDirection === "y") {
