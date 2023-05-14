@@ -35,65 +35,35 @@
   </head>
   <body>
     <main>
-      <section class="testOne">
-        <div class="canvas-wrapper">
-          <canvas
-            width="300px"
-            height="300px"
-            data-margin="10"
-            data-type="grid"
-            data-elementsize="3"
-            data-color="#6082dd"
-            data-elementformousemove=".testOne .canvas-wrapper"
-            data-="25"
-            data-secondColor="#ff0"
-          ></canvas>
+      <div class="canvas-wrapper">
+        <canvas
+          width="300px"
+          height="300px"
+          data-margin="10"
+          data-type="grid"
+          data-elementsize="3"
+          data-color="#6082dd"
+          data-elementformousemove=".canvas-wrapper"
+          data-moveradius="25"
+          data-secondColor="#ff0"
+        ></canvas>
+      </div>
+      <div class="inputs">
+        <div>
+          <label>Margin</label><input class="margin-input" placeholder="margin" value="10" type="number" />
         </div>
-        <div class="inputs">
-          <div>
-            <label>Margin</label><input class="margin-input" placeholder="margin" value="10" type="number" />
-          </div>
-          <div>
-            <label>Element Size</label><input class="element-size-input" placeholder="element size" value="3" type="number" />
-          </div>
-          <div>
-            <label>move radius</label><input class="move-radius" placeholder="move radius" value="25" type="number" />
-          </div>
-          <div>
-            <label>second color</label><input class="second-color" placeholder="second color" value="#fff000" type="color" />
-          </div>
+        <div>
+          <label>Element Size</label><input class="element-size-input" placeholder="element size" value="3" type="number" />
         </div>
-      </section>
-      <section class="testTwo">
-        <div class="canvas-wrapper">
-          <canvas
-            width="300px"
-            height="300px"
-            data-margin="10"
-            data-type="grid"
-            data-elementsize="3"
-            data-color="#6082dd"
-            data-elementformousemove=".testOne .moveradiuscanvas-wrapper"
-            data-="25"
-            data-secondColor="#ff0"
-          ></canvas>
+        <div>
+          <label>move radius</label><input class="move-radius" placeholder="move radius" value="25" type="number" />
         </div>
-        <div class="inputs">
-          <div>
-            <label>Margin</label><input class="margin-input" placeholder="margin" value="10" type="number" />
-          </div>
-          <div>
-            <label>Element Size</label><input class="element-size-input" placeholder="element size" value="3" type="number" />
-          </div>
-          <div>
-            <label>move radius</label><input class="move-radius" placeholder="move radius" value="25" type="number" />
-          </div>
-          <div>
-            <label>second color</label><input class="second-color" placeholder="second color" value="#fff000" type="color" />
-          </div>
+        <div>
+          <label>second color</label><input class="second-color" placeholder="second color" value="#fff000" type="color" />
         </div>
-      </section>
+      </div>
     </main>
+    <script src="dopdots.js" defer></script>
     <script src="index.js" defer></script>
   </body>
 </html>
