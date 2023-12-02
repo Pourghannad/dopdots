@@ -1,4 +1,57 @@
-function dopDots(canvasCtx){const canvas=canvasCtx.canvas;const ctx=canvasCtx;const elementForMouseMove=document.querySelector(canvas.dataset.elementformousemove);function mouseMove(event){renderGrid(event.offsetX,event.offsetY)}
-function renderGrid(offsetX,offsetY){const marginOfElements=canvas.dataset.margin;const padding=marginOfElements/2;const elementSize=parseInt(canvas.dataset.elementsize,10);const elementsColor=canvas.dataset.color;const elementMoveRadius=parseInt(canvas.dataset.moveradius,10);const secondColor=canvas.dataset.secondcolor||"#ff0";ctx.clearRect(0,0,canvas.width,canvas.height);for(let i=1;i<canvas.height/marginOfElements;i++){for(let j=0;j<canvas.width/marginOfElements+padding;j++){let positionX=j*marginOfElements+padding;let positionY=i*marginOfElements+padding;if(j*marginOfElements+padding>offsetX-elementMoveRadius&&j*marginOfElements+padding<offsetX+elementMoveRadius&&i*marginOfElements>offsetY-elementMoveRadius&&i*marginOfElements<offsetY+elementMoveRadius){ctx.beginPath();ctx.arc(positionX,positionY,elementSize,0,2*Math.PI);ctx.fillStyle=secondColor;ctx.fill()}else{ctx.beginPath();ctx.arc(positionX,positionY,elementSize,0,2*Math.PI);ctx.fillStyle=elementsColor;ctx.fill()}}}}
-if(canvas.width&&canvas.height){if(canvas.dataset.type==="grid"){renderGrid(1,1)}else if(canvas.dataset.type==="line"){const manifest=JSON.parse(canvas.dataset.manifest);if(manifest.lineDirection==="y"){const maxLine=(canvas.height-manifest.startPoint.y)/marginOfElements;if(manifest.endPoint==="fullHeight"){for(let i=0;i<maxLine;i++){const positionY=manifest.startPoint.y+i*marginOfElements;ctx.beginPath();ctx.arc(manifest.startPoint.x,positionY,elementSize,0,2*Math.PI);ctx.fillStyle=elementsColor;ctx.fill()}}}else if(manifest.lineDirection==="x"){const maxLine=(canvas.width-manifest.startPoint.x)/marginOfElements;if(manifest.endPoint==="fullWidth"){for(let i=0;i<maxLine;i++){const positionX=manifest.startPoint.x+i*marginOfElements;ctx.beginPath();ctx.arc(positionX,manifest.startPoint.y,elementSize,0,2*Math.PI);ctx.fillStyle=elementsColor;ctx.fill()}}}}}else{throw "Canvas should have width and height"}
-if(elementForMouseMove&&!elementForMouseMove.getAttribute("listener")){elementForMouseMove.addEventListener("mousemove",mouseMove);elementForMouseMove.setAttribute("listener","true")}}
+function dopDots(t) {
+  let e = t.canvas,
+    i = t,
+    l = document.querySelector(e.dataset.elementformousemove);
+  function a(t, l) {
+    let a = e.dataset.margin,
+      n = a / 2,
+      s = parseInt(e.dataset.elementsize, 10),
+      o = e.dataset.color,
+      r = parseInt(e.dataset.moveradius, 10),
+      f = e.dataset.secondcolor || "#ff0",
+      d = parseInt(e.dataset.startangle, 10) || 0,
+      h = parseInt(e.dataset.endangle, 10) || 2 * Math.PI;
+    i.clearRect(0, 0, e.width, e.height);
+    for (let c = 1; c < e.height / a; c++)
+      for (let g = 0; g < e.width / a + n; g++) {
+        let P = g * a + n,
+          u = c * a + n;
+        g * a + n > t - r && g * a + n < t + r && c * a > l - r && c * a < l + r
+          ? (i.beginPath(), i.arc(P, u, s, d, h), (i.fillStyle = f), i.fill())
+          : (i.beginPath(), i.arc(P, u, s, d, h), (i.fillStyle = o), i.fill());
+      }
+  }
+  if (e.width && e.height) {
+    if ("grid" === e.dataset.type) a(1, 1);
+    else if ("line" === e.dataset.type) {
+      let n = JSON.parse(e.dataset.manifest);
+      if ("y" === n.lineDirection) {
+        let s = (e.height - n.startPoint.y) / marginOfElements;
+        if ("fullHeight" === n.endPoint)
+          for (let o = 0; o < s; o++) {
+            let r = n.startPoint.y + o * marginOfElements;
+            i.beginPath(),
+              i.arc(n.startPoint.x, r, elementSize, 0, 2 * Math.PI),
+              (i.fillStyle = elementsColor),
+              i.fill();
+          }
+      } else if ("x" === n.lineDirection) {
+        let f = (e.width - n.startPoint.x) / marginOfElements;
+        if ("fullWidth" === n.endPoint)
+          for (let d = 0; d < f; d++) {
+            let h = n.startPoint.x + d * marginOfElements;
+            i.beginPath(),
+              i.arc(h, n.startPoint.y, elementSize, 0, 2 * Math.PI),
+              (i.fillStyle = elementsColor),
+              i.fill();
+          }
+      }
+    }
+  } else throw "Canvas should have width and height";
+  l &&
+    !l.getAttribute("listener") &&
+    (l.addEventListener("mousemove", function t(e) {
+      a(e.offsetX, e.offsetY);
+    }),
+    l.setAttribute("listener", "true"));
+}
