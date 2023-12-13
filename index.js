@@ -2,7 +2,8 @@ const canvas = document.querySelector("canvas");
 const renderDemoCode = () => {
   document.querySelector(".demo-container code").innerHTML = `${canvas.outerHTML
     .toString()
-    .replace("<", "‌<‌")}‌`;
+    .replace("<canvas", "‌<‌canvas         ")
+    .replaceAll('" ', '"        ')}`;
 };
 document.addEventListener("DOMContentLoaded", () => {
   dopDots(document.querySelector("main canvas").getContext("2d"));

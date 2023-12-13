@@ -11,7 +11,7 @@
     html {
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     }
 
     body {
@@ -23,11 +23,24 @@
     }
 
     main {
-      max-width: 370px;
+      width: 850px;
     }
 
     main h1 svg {
       width: 370px;
+    }
+
+    .demo-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .demo-container code {
+      background-color: #303c5c;
+      padding: 15px;
+      width: 420px;
+      white-space: break-spaces;
     }
 
     .canvas-wrapper {
@@ -61,11 +74,11 @@
       </svg>
     </h1>
     <div class="demo-container">
+      <code></code>
       <div class="canvas-wrapper">
         <canvas width="300px" height="300px" data-margin="10" data-type="grid" data-elementsize="3" data-color="#6082dd"
           data-elementformousemove=".canvas-wrapper" data-moveradius="25" data-secondColor="#ffffff"></canvas>
       </div>
-      <code></code>
     </div>
     <div class="inputs">
       <div>
