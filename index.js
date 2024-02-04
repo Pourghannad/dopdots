@@ -4,7 +4,7 @@ const renderDemoCode = () => {
     .toString()
     .replace("<canvas", "‌<‌canvas                                           ")
     .replaceAll('" ', '"\n    ')
-    .replaceAll('">', '"                 >')}`;
+    .replaceAll('">', '"                 >')}<‌/canvas>`;
 };
 document.addEventListener("DOMContentLoaded", () => {
   dopDots(document.querySelector("main canvas").getContext("2d"));
