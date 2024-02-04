@@ -17,7 +17,7 @@ function dopDots(canvasCtx) {
     const startAngle = parseInt(canvas.dataset.startangle, 10) || 0;
     const endAngle = parseInt(canvas.dataset.endangle, 10) || 2 * Math.PI;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    for (let i = 1; i < canvas.height / marginOfElements; i++) {
+    for (let i = 0; i < canvas.height / marginOfElements; i++) {
       for (let j = 0; j < canvas.width / marginOfElements + padding; j++) {
         let positionX = j * marginOfElements + padding;
         let positionY = i * marginOfElements + padding;
