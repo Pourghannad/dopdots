@@ -3,7 +3,7 @@ const renderDemoCode = () => {
   document.querySelector(".demo-container code").innerHTML = `  <‌script src="dopdots.bundle.js"><‌/script>
   ${canvas.outerHTML
     .toString()
-    .replace("<canvas", "‌<‌canvas                                           ")
+    .replace("<canvas", "‌<‌canvas                                         ")
     .replaceAll('" ', '"\n    ')
     .replaceAll('">', '"                 >')}<‌/canvas>`;
 };
@@ -28,6 +28,13 @@ document.querySelector(".move-radius").addEventListener("input", (event) => {
   dopDots(document.querySelector("main canvas").getContext("2d"));
   renderDemoCode();
 });
+
+document.querySelector(".main-color").addEventListener("input", (event) => {
+  canvas.dataset.color = event.target.value;
+  dopDots(document.querySelector("main canvas").getContext("2d"));
+  renderDemoCode();
+});
+
 
 document.querySelector(".second-color").addEventListener("input", (event) => {
   canvas.dataset.secondcolor = event.target.value;
