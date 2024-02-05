@@ -1,11 +1,12 @@
 const canvas = document.querySelector("canvas");
 const renderDemoCode = () => {
   document.querySelector(".demo-container code").innerHTML = `  <‌script src="dopdots.bundle.js"><‌/script>
-  ${canvas.outerHTML
-    .toString()
-    .replace("<canvas", "‌<‌canvas                                         ")
-    .replaceAll('" ', '"\n    ')
-    .replaceAll('">', '"                 >')}<‌/canvas>`;
+  <‌div class="canvas-wrapper">
+    ${canvas.outerHTML
+      .toString()
+      .replace("<canvas", "‌<‌canvas                                                      ")
+      .replaceAll('" ', '"\n      ')}<‌/canvas>
+  <‌/div>`;
 };
 document.addEventListener("DOMContentLoaded", () => {
   dopDots(document.querySelector("main canvas").getContext("2d"));
