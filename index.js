@@ -1,6 +1,7 @@
 const canvas = document.querySelector("canvas");
 const renderDemoCode = () => {
-  document.querySelector(".demo-container code").innerHTML = `${canvas.outerHTML
+  document.querySelector(".demo-container code").innerHTML = `  <‌script src="dopdots.bundle.js"><‌/script>
+  ${canvas.outerHTML
     .toString()
     .replace("<canvas", "‌<‌canvas                                           ")
     .replaceAll('" ', '"\n    ')
