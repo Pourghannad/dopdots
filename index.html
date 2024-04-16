@@ -69,6 +69,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      position: relative;
     }
 
     .demo-container code {
@@ -77,6 +78,13 @@
       width: 470px;
       white-space: break-spaces;
       color: #889ac7;
+    }
+
+    .demo-container strong {
+      position: absolute;
+      right: 176px;
+      top: -18px;
+      color: rgb(255 255 255 / 20%);
     }
 
     .canvas-wrapper {
@@ -151,6 +159,7 @@
     </h1>
     <div class="demo-container">
       <code></code>
+      <strong>Demo</strong>
       <div class="canvas-wrapper">
         <canvas width="190px" height="190px" data-margin="10" data-type="grid" data-elementsize="3" data-color="#6082dd"
           data-elementformousemove=".canvas-wrapper" data-moveradius="25" data-secondColor="#ffffff"></canvas>
