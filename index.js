@@ -53,7 +53,8 @@ document.querySelector("button").addEventListener("click", () => {
     .textContent.toString()
     .trim()
     .replaceAll("<‌", "<")
-    .replaceAll(" ‌<", "<");
+    .replaceAll(" ‌<", "<")
+    .replaceAll('         ', ' ');
   navigator.clipboard.writeText(code).then(
     function () {
       console.log("Copying to clipboard was successful!");
