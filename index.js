@@ -1,4 +1,5 @@
 const canvas = document.querySelector("canvas");
+const toast = document.getElementById("toast");
 const renderDemoCode = () => {
   document.querySelector(
     ".demo-container code"
@@ -54,10 +55,16 @@ document.querySelector("button").addEventListener("click", () => {
     .trim()
     .replaceAll("<‌", "<")
     .replaceAll(" ‌<", "<")
-    .replaceAll('         ', ' ');
+    .replaceAll("         ", " ");
   navigator.clipboard.writeText(code).then(
     function () {
       console.log("Copying to clipboard was successful!");
+      toast.innerText = "Copying to clipboard was successful.";
+      toast.classList.add("active");
+
+      setTimeout(() => {
+        toast.classList.remove("active");
+      }, 1400);
     },
     function (err) {
       console.error("Could not copy text: ", err);
