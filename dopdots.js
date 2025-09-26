@@ -13,6 +13,8 @@ function dopDots(canvasCtx) {
     const elementSize = parseInt(canvas.dataset.elementsize, 10);
     const elementsColor = canvas.dataset.color;
     const elementMoveRadius = parseInt(canvas.dataset.moveradius, 10);
+    const elementRect = canvas.dataset.elementrect;
+    const secondRect = canvas.dataset.secondrect;
     const secondColor = canvas.dataset.secondcolor || "#ff0";
     const startAngle = parseInt(canvas.dataset.startangle, 10) || 0;
     const endAngle = parseInt(canvas.dataset.endangle, 10) || 2 * Math.PI;
@@ -28,7 +30,11 @@ function dopDots(canvasCtx) {
           i * marginOfElements < offsetY + elementMoveRadius 
         ) {
           ctx.beginPath();
-          ctx.arc(positionX, positionY, elementSize, startAngle, endAngle);
+          if (secondRect === "false") {
+            ctx.arc(positionX, positionY, elementSize, startAngle, endAngle);
+          } else {
+            ctx.rect(positionX, positionY, elementSize, elementSize)
+          }
           ctx.fillStyle = secondColor;
           ctx.fill();
         } else {

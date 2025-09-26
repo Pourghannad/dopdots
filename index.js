@@ -42,6 +42,12 @@ document.querySelector(".start-angle").addEventListener("input", (event) => {
   renderDemoCode();
 });
 
+document.querySelector(".end-angle").addEventListener("input", (event) => {
+  canvas.dataset.endangle = event.target.value;
+  dopDots(document.querySelector("main canvas").getContext("2d"));
+  renderDemoCode();
+});
+
 document.querySelector(".main-color").addEventListener("input", (event) => {
   canvas.dataset.color = event.target.value;
   dopDots(document.querySelector("main canvas").getContext("2d"));
