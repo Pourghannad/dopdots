@@ -25,7 +25,7 @@ function dopDots(canvasCtx) {
           j * marginOfElements + padding > offsetX - elementMoveRadius &&
           j * marginOfElements + padding < offsetX + elementMoveRadius &&
           i * marginOfElements > offsetY - elementMoveRadius &&
-          i * marginOfElements < offsetY + elementMoveRadius
+          i * marginOfElements < offsetY + elementMoveRadius 
         ) {
           ctx.beginPath();
           ctx.arc(positionX, positionY, elementSize, startAngle, endAngle);

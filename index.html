@@ -108,8 +108,9 @@
 
       .inputs {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
         align-items: center;
         margin-top: 2em;
       }
@@ -120,9 +121,10 @@
         justify-content: space-between;
         color: #fff;
         margin: 0.5em 0;
-        width: 300px;
+        width: 200px;
         background: rgb(255 255 255 / 10%);
         padding: 12px;
+        height: 40px;
       }
 
       .inputs div input {
@@ -132,6 +134,7 @@
         color: #fff;
         outline: 0;
         cursor: pointer;
+        max-width: 35px;
       }
       .inputs div input:focus {
         box-shadow: 0 0 0 1px #fff;
@@ -238,7 +241,7 @@
             data-elementsize="3"
             data-color="#6082dd"
             data-elementformousemove=".canvas-wrapper"
-            data-moveradius="25"
+            data-moveradius="60"
             data-secondColor="#ffffff"
           ></canvas>
         </div>
@@ -275,6 +278,16 @@
           />
         </div>
         <div>
+          <label>Start Angle</label
+          ><input
+            class="start-angle"
+            placeholder="start angle"
+            value="10"
+            min="1"
+            type="number"
+          />
+        </div>
+        <div>
           <label>Main Color</label
           ><input
             class="main-color"
@@ -295,7 +308,7 @@
       </div>
       <div id="toast">Copying to clipboard was successful.</div>
     </main>
-    <script src="dopdots.bundle.js" defer></script>
+    <script src="dopdots.js" defer></script>
     <script src="index.js" defer></script>
   </body>
 </html>
