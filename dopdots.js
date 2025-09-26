@@ -39,7 +39,11 @@ function dopDots(canvasCtx) {
           ctx.fill();
         } else {
           ctx.beginPath();
-          ctx.arc(positionX, positionY, elementSize, startAngle, endAngle);
+          if (elementRect === "false") {
+            ctx.arc(positionX, positionY, elementSize, startAngle, endAngle);
+          } else {
+            ctx.rect(positionX, positionY, elementSize, elementSize)
+          }
           ctx.fillStyle = elementsColor;
           ctx.fill();
         }
