@@ -3,7 +3,7 @@ const toast = document.getElementById("toast");
 const renderDemoCode = () => {
   document.querySelector(
     ".demo-container code"
-  ).innerHTML = `  <‌script src="dopdots.bundle.js"><‌/script>
+  ).innerHTML = `
   <‌div class="canvas-wrapper">
     ${canvas.outerHTML
       .toString()
@@ -12,7 +12,16 @@ const renderDemoCode = () => {
         "‌<‌canvas                                                      "
       )
       .replaceAll('" ', '"\n      ')}<‌/canvas>
-  <‌/div>`;
+  <‌/div>
+    <‌script src="dopdots.bundle.js"><‌/script>
+    <‌script>
+      document.addEventListener("DOMContentLoaded", () => {
+        dopDots(
+          document.querySelector("canvas").getContext("2d")
+        );
+      });
+    <‌/script>
+  `;
 };
 document.addEventListener("DOMContentLoaded", () => {
   dopDots(document.querySelector("main canvas").getContext("2d"));
