@@ -8,10 +8,10 @@
     "url": "git+https://github.com/Pourghannad/dopdots.git"
   },
   "keywords": [
-    "WDS"
+    "dopdots"
   ],
-  "author": "Web Dev Simplified",
-  "license": "ISC",
+  "author": "Pourghannad",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Pourghannad/dopdots/issues"
   },
