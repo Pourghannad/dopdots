@@ -1,0 +1,19 @@
+{
+  "name": "@pourghannad/dopdots",
+  "version": "1.0.1",
+  "description": "sample package for render dots using canvas.",
+  "main": "dopdots.bundle.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pourghannad/dopdots.git"
+  },
+  "keywords": [
+    "WDS"
+  ],
+  "author": "Web Dev Simplified",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pourghannad/dopdots/issues"
+  },
+  "homepage": "https://pourghannad.github.io/dopdots"
+}

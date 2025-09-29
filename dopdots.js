@@ -101,3 +101,5 @@ function dopDots(canvasCtx) {
     elementForMouseMove.setAttribute("listener", "true");
   }
 }
+
+module.exports = dopDots
