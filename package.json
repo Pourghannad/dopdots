@@ -10,6 +10,9 @@
   "keywords": [
     "dopdots"
   ],
+  "files": [
+    "dopdots.bundle.js"
+  ],
   "author": "Pourghannad",
   "license": "MIT",
   "bugs": {
