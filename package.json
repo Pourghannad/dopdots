@@ -3,6 +3,7 @@
   "version": "1.0.2",
   "description": "sample package for render dots using canvas.",
   "main": "dopdots.bundle.js",
+  "types": "dopdots.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Pourghannad/dopdots.git"
