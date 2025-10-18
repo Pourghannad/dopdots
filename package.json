@@ -1,6 +1,6 @@
 {
   "name": "@pourghannad/dopdots",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "sample package for render dots using canvas.",
   "main": "dopdots.bundle.js",
   "types": "dopdots.d.ts",
@@ -12,7 +12,8 @@
     "dopdots"
   ],
   "files": [
-    "dopdots.bundle.js"
+    "dopdots.bundle.js",
+    "dopdots.d.ts"
   ],
   "author": "Pourghannad",
   "license": "MIT",
