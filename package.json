@@ -1,6 +1,6 @@
 {
   "name": "@pourghannad/dopdots",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "sample package for render dots using canvas.",
   "main": "dopdots.bundle.js",
   "types": "dopdots.d.ts",
